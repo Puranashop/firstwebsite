@@ -61,12 +61,6 @@
             padding: 20px;
         }
 
-        .product-wrapper {
-            display: flex;
-            flex-direction: column;
-            gap: 40px;
-        }
-
         .product-section {
             display: flex;
             flex-wrap: wrap;
@@ -75,11 +69,6 @@
             padding: 40px;
             border-radius: 12px;
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .product-section:hover {
-            transform: translateY(-5px);
         }
 
         /* Single Image Display */
@@ -97,7 +86,6 @@
             max-height: 600px;
             object-fit: contain;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         .product-details {
@@ -136,12 +124,45 @@
             font-weight: 600;
             transition: all 0.3s ease-in-out;
             margin-top: 20px;
-            box-shadow: 0 4px 8px rgba(231, 76, 60, 0.3);
         }
 
         .buy-now:hover {
             background-color: #cf2a20;
             transform: scale(1.05);
+        }
+
+        /* Video Section */
+        .video-section {
+            text-align: center;
+            padding: 30px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            margin-top: 40px;
+        }
+
+        .video-section h2 {
+            color: #002855;
+            margin-bottom: 20px;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            background: black;
+            border-radius: 10px;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
         }
 
         /* Customer Reviews */
@@ -150,46 +171,20 @@
             padding: 30px;
             border-radius: 12px;
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            margin-top: 40px;
         }
 
         .reviews h2 {
-            text-align: center;
             color: #002855;
+            text-align: center;
             margin-bottom: 20px;
         }
 
         .review {
             margin-bottom: 20px;
             padding: 15px;
+            background: #f8f9fa;
             border-left: 4px solid #FFD700;
-            background: #f9f9f9;
-            border-radius: 5px;
-        }
-
-        .review p {
-            font-size: 1em;
-            color: #555;
-        }
-
-        .review strong {
-            color: #002855;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .header {
-                flex-direction: column;
-                text-align: center;
-            }
-            .product-section {
-                flex-direction: column;
-            }
-            .product-gallery, .product-details {
-                max-width: 100%;
-            }
-            .product-gallery img {
-                max-height: 400px;
-            }
         }
     </style>
 </head>
@@ -205,32 +200,47 @@
             <a href="#faq">FAQ</a>
         </nav>
     </header>
+
     <div class="container">
-        <div class="product-wrapper">
-            <section class="product-section">
-                <div class="product-gallery">
-                    <img src="Product_image1.png" alt="Product Image">
-                </div>
-                <div class="product-details">
-                    <h2 class="product-title">Ultimate Wealth & Budget Planner (Google Sheet)</h2>
-                    <p class="price">₹999</p>
-                    <p class="description">Take control of your finances with the Ultimate Wealth & Budget Planner! This powerful Google Sheet helps you track expenses, manage investments, and plan your financial future with ease.</p>
-                    <a href="purchase_page.html" class="buy-now">Buy Now</a>
-                </div>
-            </section>
-            <section class="reviews">
-                <h2>Customer Reviews</h2>
-                <div class="review">
-                    <p><strong>John D.</strong>: "This planner has changed the way I manage my finances. Highly recommended!"</p>
-                </div>
-                <div class="review">
-                    <p><strong>Sarah W.</strong>: "Simple yet powerful. Helps me track expenses like a pro!"</p>
-                </div>
-                <div class="review">
-                    <p><strong>Michael R.</strong>: "A must-have for anyone serious about budgeting and wealth management."</p>
-                </div>
-            </section>
-        </div>
+        <!-- Product Section -->
+        <section class="product-section">
+            <div class="product-gallery">
+                <img src="Product_image1.png" alt="Product Image">
+            </div>
+            <div class="product-details">
+                <h2 class="product-title">Ultimate Wealth & Budget Planner (Google Sheet)</h2>
+                <p class="price">₹999</p>
+                <p class="description">Take control of your finances with the Ultimate Wealth & Budget Planner! This powerful Google Sheet helps you track expenses, manage investments, and plan your financial future with ease.</p>
+                <h3>Key Features:</h3>
+                <ul>
+                    <li>Automatic Expense Tracking & Categorization</li>
+                    <li>Investment Portfolio Management</li>
+                    <li>Customizable Budgeting System</li>
+                    <li>Income & Expense Analytics</li>
+                    <li>Debt & Savings Goal Tracker</li>
+                    <li>Lifetime Access + Free Updates</li>
+                </ul>
+                <a href="purchase_page.html" class="buy-now">Buy Now</a>
+            </div>
+        </section>
+
+        <!-- Video Section -->
+        <section class="video-section">
+            <h2>Watch How It Works</h2>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/RPpJ31r4HPk" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <!-- Customer Reviews -->
+        <section class="reviews">
+            <h2>Customer Reviews</h2>
+            <div class="review">"Excellent product! Helped me manage my finances effortlessly." - John Doe</div>
+            <div class="review">"Great value for money. Highly recommend it!" - Sarah Williams</div>
+            <div class="review">"A must-have for budgeting and tracking expenses." - Mike Johnson</div>
+            <div class="review">"Saves so much time and effort. Amazing tool!" - Emily Davis</div>
+            <div class="review">"The best financial planner I’ve ever used!" - Daniel Smith</div>
+        </section>
     </div>
 </body>
 </html>
